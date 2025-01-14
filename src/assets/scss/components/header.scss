@@ -2,9 +2,29 @@
 @use "../vars/sizes";
 
 .header-wrapper {
+  .back-btn {
+    display: flex;
+    align-items: center;
+
+    .arrow-wrapper {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: colors.$main-text-color;
+      background-color: #444749;
+    }
+
+    p {
+      text-transform: capitalize;
+      color: colors.$primary-text-color;
+      font-size: sizes.$main-text-size + 2;
+      margin-left: 5px;
+    }
+  }
 
   .timer {
-    margin-left: 42px;
 
     .item {
       margin-right: 8px;

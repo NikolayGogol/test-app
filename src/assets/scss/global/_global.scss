@@ -1,5 +1,48 @@
 @use "../vars/colors";
+@use "../vars/sizes";
 
 body {
   background-color: colors.$main-bg-color;
+  color: colors.$main-text-color;
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.container {
+  max-width: 988px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: sizes.$main-text-size;
+  text-transform: uppercase;
+  line-height: normal;
+}
+
+.title {
+  font-size: sizes.$main-text-size;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.sub-title {
+  font-size: sizes.$main-text-size - 1;
+  color: colors.$primary-text-color;
+  line-height: 15px;
+}
+
+.controls {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: colors.$primary-text-color;
+  border: 1px solid colors.$primary-text-color;
+  border-radius: 50%;
 }

@@ -1,0 +1,36 @@
+@use "../vars/colors";
+@use "../vars/sizes";
+
+.header-wrapper {
+
+  .timer {
+    margin-left: 42px;
+
+    .item {
+      margin-right: 8px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      .value {
+        width: 68px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background-color: colors.$primary-bg-color;
+        font-size: sizes.$title + 4;
+      }
+
+      .name {
+        @extend .value;
+        font-size: sizes.$main-text-size - 1;
+        color: colors.$primary-text-color;
+        margin-top: 8px;
+        font-weight: 700;
+      }
+    }
+  }
+}

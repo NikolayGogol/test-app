@@ -1,0 +1,39 @@
+@use "../vars/colors";
+
+.footer-wrapper {
+  margin-top: 40px;
+
+  .sub-title {
+    margin-top: 14px;
+    max-width: 240px;
+    width: 100%;
+  }
+
+  .counter {
+    p {
+      font-size: 55px;
+      color: colors.$main-text-color;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  button[type="button"] {
+    padding: 12px 29px;
+    border: 1px solid #444749;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: colors.$main-text-color;
+    line-height: 19px;
+
+    &.submit {
+      border-color: transparent;
+      background-color: #FFBD14;
+      color: #0D0D0D;
+    }
+  }
+}

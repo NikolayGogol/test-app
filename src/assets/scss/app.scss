@@ -1,3 +1,8 @@
-@use "components/components";
-@use "pages/pages";
-@use "global/global";
+@use "sass:meta";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+//
+@include meta.load-css("components/components");
+@include meta.load-css("pages/pages");
+@include meta.load-css("global/global");

@@ -7,7 +7,6 @@ import {icon} from "./helpers/icon.js";
 //
 const store = useMainStore()
 const {CARD_LIST} = storeToRefs(store)
-const {GET_CARDS} = store
 const tabsList = [
   {
     icon: icon('compass'),
@@ -23,8 +22,6 @@ const tabsList = [
   },
 ]
 //
-GET_CARDS(6)
-
 </script>
 
 <template>
@@ -61,13 +58,13 @@ GET_CARDS(6)
               </div>
               <div class="col-span-2 flex flex-col items-center justify-center">
                 <div v-html="team.icon"></div>
-                <p class="mt-[12px] text-[14px]">{{ team.name }}</p>
+                <p class="mt-[12px] text-[12px] sm:text-[14px]">{{ team.name }}</p>
               </div>
             </template>
             <template v-else>
               <div class="col-span-2 flex flex-col items-center justify-center">
                 <div v-html="team.icon"></div>
-                <p class="mt-[12px] text-[14px]">{{ team.name }}</p>
+                <p class="mt-[12px] text-[12px] sm:text-[14px]">{{ team.name }}</p>
               </div>
               <div class="col-span-1 flex flex-col items-center">
                 <div class="controls">
@@ -92,9 +89,11 @@ GET_CARDS(6)
           </ul>
           <div class="tab-content" v-if="card.prediction">
             <div class="insights mt-[24px]">
-              <div class="grid grid-cols-5 gap-[20px] items-center">
+              <div class="grid grid-cols-5 gap-[20px] sm:gap-[10px] items-center">
                 <div class="col-span-2">
-                  <img class="w-full object-cover" src="./assets/images/Chart.png" alt="">
+                  <img :src="card.chart"
+                       class="w-full sm:w-[116px] object-cover"
+                       alt="">
                 </div>
                 <ul class="col-span-3 w-full">
                   <li v-for="(value, key, index) in card.prediction.insights"
@@ -102,7 +101,7 @@ GET_CARDS(6)
                       :key="index">
                     <div class="flex items-center">
                       <div class="icon"></div>
-                      <p class="label uppercase">{{ key }}</p>
+                      <p class="label" :class="[index === 1 ? 'capitalize': 'uppercase']">{{ key }}</p>
                     </div>
                     <div class="block font-[700] text-[12px]">{{ value }}%</div>
                   </li>

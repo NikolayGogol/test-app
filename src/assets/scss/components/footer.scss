@@ -1,4 +1,5 @@
 @use "../vars/colors";
+@use "../vars/sizes";
 
 .footer-wrapper {
   margin-top: 40px;
@@ -6,6 +7,7 @@
   .sub-title {
     margin-top: 14px;
     width: 100%;
+    font-size: sizes.$main-text-size - 2;
   }
 
   .counter {
@@ -28,6 +30,7 @@
     font-weight: 600;
     color: colors.$main-text-color;
     line-height: 19px;
+    font-size: sizes.$main-text-size + 2;
 
     &.submit {
       border-color: transparent;

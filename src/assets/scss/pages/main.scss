@@ -10,13 +10,16 @@
 
     .card-header {
       background-color: colors.$card-primary-color;
-      padding: 15px;
+      padding: 16.5px 15px;
       border-radius: inherit;
-      margin: 12px;
+      margin: 11px;
 
       p {
         font-size: sizes.$main-text-size;
         color: colors.$main-text-color;
+        @media (max-width: 768px) {
+          font-size: sizes.$main-text-size - 3;
+        }
 
         &.date {
           color: colors.$primary-text-color;
@@ -33,9 +36,9 @@
         &:before {
           content: '';
           position: absolute;
-          width: 20px;
+          width: 15px;
           height: 5px;
-          left: -10px;
+          left: -7.5px;
           background-color: colors.$main-text-color;
           @media (max-width: 768px) {
             width: 10px;
@@ -69,9 +72,15 @@
         }
       }
 
+      .controls {
+        width: 23px;
+        height: 23px;
+        font-size: sizes.$main-text-size;
+      }
+
       p {
         &.score {
-          font-size: sizes.$title + 26;
+          font-size: sizes.$title + 36;
           padding-top: 10px;
           padding-bottom: 10px;
         }
@@ -96,6 +105,9 @@
           font-size: sizes.$main-text-size - 1;
           margin-right: 33px;
           cursor: pointer;
+          @media (max-width: 768px) {
+            font-size: sizes.$main-text-size;
+          }
 
           &.active {
             color: colors.$main-text-color;
@@ -119,13 +131,30 @@
             }
           }
 
+          &:first-of-type {
+            svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+
+          &:nth-of-type(2) {
+            svg {
+              width: 11px;
+              height: 11px;
+            }
+          }
+
           &:last-of-type {
             margin-right: 0;
+
+            svg {
+              width: 10px;
+              height: 10px;
+            }
           }
 
           svg {
-            width: 11px;
-
             * {
               fill: colors.$primary-text-color
             }
@@ -142,10 +171,18 @@
 
         ul {
           li {
-            padding: 11px 14px;
+            width: 256px;
+            height: 37px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
             border-radius: 7px;
             background-color: #1B1C1F;
             margin-bottom: 6px;
+            @media (max-width: 768px) {
+              width: 100%;
+            }
 
             &:first-of-type {
               .icon {
@@ -182,6 +219,9 @@
             p {
               color: colors.$primary-text-color;
               font-size: sizes.$main-text-size;
+              @media (max-width: 768px) {
+                font-size: sizes.$main-text-size - 2;
+              }
             }
 
             .icon {

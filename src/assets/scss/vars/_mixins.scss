@@ -1,0 +1,7 @@
+@use "../vars/sizes";
+
+@mixin mobile-view() {
+  @media (max-width: sizes.$mobile) {
+    @content;
+  }
+}

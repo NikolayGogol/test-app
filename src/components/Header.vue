@@ -31,7 +31,7 @@ const timer = ref({
       </div>
       <div class="flex items-center col-span-2">
         <div class="hidden sm:block">
-          <div class="title">Countdown</div>
+          <div class="title !text-[20px]">Countdown</div>
           <div class="sub-title">Don’t miss!</div>
         </div>
         <div class="timer mt-[17px] sm:mt-0 flex sm:ml-[42px] justify-center w-full sm:w-auto">

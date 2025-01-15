@@ -1,5 +1,6 @@
 @use "../vars/colors";
 @use "../vars/sizes";
+@use "../vars/mixins";
 
 .main-wrapper {
   margin-top: 36px;
@@ -17,7 +18,7 @@
       p {
         font-size: sizes.$main-text-size;
         color: colors.$main-text-color;
-        @media (max-width: 768px) {
+        @include mixins.mobile-view {
           font-size: sizes.$main-text-size - 3;
         }
 
@@ -40,7 +41,7 @@
           height: 5px;
           left: -7.5px;
           background-color: colors.$main-text-color;
-          @media (max-width: 768px) {
+          @include mixins.mobile-view {
             width: 10px;
             left: -5px;
           }
@@ -90,7 +91,7 @@
     .card-tabs {
       background-color: colors.$card-primary-color;
       padding: 15px 30px;
-      border-radius: 0 0px 7px 7px;
+      border-radius: 0 0 7px 7px;
 
       .tab-list {
         display: flex;
@@ -105,7 +106,7 @@
           font-size: sizes.$main-text-size - 1;
           margin-right: 33px;
           cursor: pointer;
-          @media (max-width: 768px) {
+          @include mixins.mobile-view {
             font-size: sizes.$main-text-size;
           }
 
@@ -180,7 +181,7 @@
             border-radius: 7px;
             background-color: #1B1C1F;
             margin-bottom: 6px;
-            @media (max-width: 768px) {
+            @include mixins.mobile-view {
               width: 100%;
             }
 
@@ -218,8 +219,8 @@
 
             p {
               color: colors.$primary-text-color;
-              font-size: sizes.$main-text-size;
-              @media (max-width: 768px) {
+              font-size: sizes.$main-text-size + 2;
+              @include mixins.mobile-view {
                 font-size: sizes.$main-text-size - 2;
               }
             }

@@ -3,6 +3,7 @@ import {icon} from "../helpers/icon.js";
 import Chart from '../assets/images/Chart.png'
 import Chart1 from '../assets/images/Chart1.png'
 import Chart2 from '../assets/images/Chart2.png'
+import Chart3 from '../assets/images/Chart3.png'
 
 export const useMainStore = defineStore({
     id: 'main',
@@ -37,7 +38,7 @@ export const useMainStore = defineStore({
                             npl: 62,
                         }
                     },
-                    chart: Chart
+                    chart: Chart3
                 },
                 {
                     liga: {

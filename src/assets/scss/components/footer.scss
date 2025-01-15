@@ -1,5 +1,6 @@
 @use "../vars/colors";
 @use "../vars/sizes";
+@use "../vars/mixins";
 
 .footer-wrapper {
   margin-top: 40px;
@@ -8,6 +9,9 @@
     margin-top: 14px;
     width: 100%;
     font-size: sizes.$main-text-size - 2;
+    @include mixins.mobile-view {
+      font-size: sizes.$main-text-size;
+    }
   }
 
   .counter {

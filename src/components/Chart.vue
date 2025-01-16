@@ -1,5 +1,5 @@
 <script setup>
-const colors = ['#FF5A00', '#76E664', '#FFBD14']
+const colors = ['#76E664', '#FFBD14', '#FF5A00']
 const maxDashOffset = 496.12;
 const strokeW = 13;
 const size = {

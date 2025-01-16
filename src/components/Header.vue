@@ -17,24 +17,24 @@ const timer = ref({
 })
 
 //
-const targetDate = new Date('2025-12-31T23:59:59'); // Ваша цільова дата
+const targetDate = new Date('2025-12-31T23:59:59');
 startCountdown(targetDate);
 
 function startCountdown(targetDate) {
   const countdownInterval = setInterval(() => {
     const now = new Date();
-    const timeRemaining = targetDate - now; // Різниця між поточним часом і цільовою датою
+    const timeRemaining = targetDate - now;
     if (timeRemaining <= 0) {
-      clearInterval(countdownInterval); // Зупиняємо відлік, коли час досягнуто
+      clearInterval(countdownInterval);
       console.log('Time is up!');
       return;
     }
 
-    timer.value.days.value = Math.floor(timeRemaining / (1000 * 60 * 60 * 24)); // Кількість днів
-    timer.value.hours.value = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Кількість годин
-    timer.value.minutes.value = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60)); // Кількість хвилин
-    timer.value.seconds.value = Math.floor((timeRemaining % (1000 * 60)) / 1000); // Кількість секунд
-  }, 1000); // Оновлювати кожну секунду
+    timer.value.days.value = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    timer.value.hours.value = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    timer.value.minutes.value = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    timer.value.seconds.value = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+  }, 1000);
 }
 </script>
 

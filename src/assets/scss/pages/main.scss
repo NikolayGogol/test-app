@@ -92,6 +92,10 @@
       background-color: colors.$card-primary-color;
       padding: 15px 30px;
       border-radius: 0 0 7px 7px;
+      height: calc(100% - 265px);
+      @include mixins.mobile-view {
+        height: auto;
+      }
 
       .tab-list {
         display: flex;

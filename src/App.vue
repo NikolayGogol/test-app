@@ -229,14 +229,15 @@ function prepareSeries(data) {
         <div class="card-tabs">
           <ul class="tab-list">
             <li v-for="(tab, tabIndex) in tabsList"
-                :class="{'active': !tabIndex}"
+                :class="{'active':!card.activeTab ? !tabIndex :card.activeTab === `${cardIndex}.${tabIndex}`}"
+                @click="card.activeTab = `${cardIndex}.${tabIndex}`"
                 :key="tabIndex">
               <div v-html="tab.icon"></div>
               <p>{{ tab.label }}</p>
             </li>
           </ul>
-          <div class="tab-content" v-if="card.prediction">
-            <div class="insights mt-[24px]">
+          <div class="tab-content pt-[24px]" v-if="card.prediction">
+            <div v-if="!card.activeTab || card.activeTab === `${cardIndex}.0`" class="insights">
               <div class="grid grid-cols-5 gap-[20px] sm:gap-[10px] items-center">
                 <div class="col-span-2">
                   <Chart :size="size"
@@ -253,6 +254,21 @@ function prepareSeries(data) {
                     <div class="block font-[700] text-[12px]">{{ value }}%</div>
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div v-else-if="card.activeTab === `${cardIndex}.1`">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cum expedita harum perferendis provident
+              quas temporibus tenetur, ut? Amet atque debitis deleniti doloribus eius illo nisi quae totam unde
+              veritatis?
+            </div>
+            <div v-else>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deleniti eum ipsum qui veniam.
+                Accusantium autem deleniti, dicta eum expedita facere fugit, in minima nostrum numquam pariatur quod
+                temporibus voluptatem!
+              </div>
+              <div>Accusantium aliquid animi, assumenda debitis dolore dolorum error esse est et in labore minus
+                molestiae molestias mollitia nemo neque nulla numquam perspiciatis possimus quo sed similique tenetur
+                vero voluptatem voluptatum.
               </div>
             </div>
           </div>

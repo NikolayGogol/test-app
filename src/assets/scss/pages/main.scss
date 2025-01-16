@@ -173,7 +173,7 @@
         .insights {
           @include mixins.mobile-view() {
             .relative {
-
+              left: -30px;
             }
           }
         }

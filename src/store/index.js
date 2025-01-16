@@ -1,9 +1,9 @@
 import {defineStore} from 'pinia'
 import {icon} from "../helpers/icon.js";
-import Chart from '../assets/images/Chart.png'
-import Chart1 from '../assets/images/Chart1.png'
-import Chart2 from '../assets/images/Chart2.png'
-import Chart3 from '../assets/images/Chart3.png'
+
+function generateRandomNumber() {
+    return Math.floor(Math.random() * 101);
+}
 
 export const useMainStore = defineStore({
     id: 'main',
@@ -22,23 +22,22 @@ export const useMainStore = defineStore({
                     teams: [
                         {
                             name: 'Roma FC',
-                            icon: icon('t-shirt-green'),
+                            iconColor: '#d5d51f',
                             score: 0
                         },
                         {
                             name: 'FC Napoli',
-                            icon: icon('t-shirt-blue'),
+                            iconColor: '#952c2c',
                             score: 0
                         },
                     ],
                     prediction: {
                         insights: {
-                            atm: 62,
-                            draw: 62,
-                            npl: 62,
+                            atm: generateRandomNumber(),
+                            draw: generateRandomNumber(),
+                            npl: generateRandomNumber(),
                         }
                     },
-                    chart: Chart3
                 },
                 {
                     liga: {
@@ -52,23 +51,22 @@ export const useMainStore = defineStore({
                     teams: [
                         {
                             name: 'Roma FC',
-                            icon: icon('t-shirt-green'),
+                            iconColor: '#3657a8',
                             score: 0
                         },
                         {
                             name: 'FC Napoli',
-                            icon: icon('t-shirt-blue'),
+                            iconColor: '#d5d51f',
                             score: 0
                         },
                     ],
                     prediction: {
                         insights: {
-                            atm: 62,
-                            draw: 62,
-                            npl: 62,
+                            atm: generateRandomNumber(),
+                            draw: generateRandomNumber(),
+                            npl: generateRandomNumber(),
                         }
                     },
-                    chart: Chart
                 },
                 {
                     liga: {
@@ -82,23 +80,22 @@ export const useMainStore = defineStore({
                     teams: [
                         {
                             name: 'Roma FC',
-                            icon: icon('t-shirt-green'),
+                            iconColor: '#1fd57a',
                             score: 0
                         },
                         {
                             name: 'FC Napoli',
-                            icon: icon('t-shirt-blue'),
+                            iconColor: '#2b678c',
                             score: 0
                         },
                     ],
                     prediction: {
                         insights: {
-                            atm: 62,
-                            draw: 62,
-                            npl: 62,
+                            atm: generateRandomNumber(),
+                            draw: generateRandomNumber(),
+                            npl: generateRandomNumber(),
                         }
                     },
-                    chart: Chart
                 },
                 {
                     liga: {
@@ -112,12 +109,41 @@ export const useMainStore = defineStore({
                     teams: [
                         {
                             name: 'Roma FC',
-                            icon: icon('t-shirt-green'),
+                            iconColor: '#bd1fd5',
                             score: 0
                         },
                         {
                             name: 'FC Napoli',
-                            icon: icon('t-shirt-blue'),
+                            iconColor: '#85712f',
+                            score: 0
+                        },
+                    ],
+                    prediction: {
+                        insights: {
+                            atm: generateRandomNumber(),
+                            draw: generateRandomNumber(),
+                            npl: generateRandomNumber(),
+                        }
+                    },
+                },
+                {
+                    liga: {
+                        name: 'La Liga Santander',
+                        icon: icon('ball')
+                    },
+                    date: {
+                        value: 'Sat 6 May, 17:00',
+                        icon: icon('clock')
+                    },
+                    teams: [
+                        {
+                            name: 'Roma FC',
+                            iconColor: '#32852f',
+                            score: 0
+                        },
+                        {
+                            name: 'FC Napoli',
+                            iconColor: '#8c443b',
                             score: 0
                         },
                     ],
@@ -128,7 +154,6 @@ export const useMainStore = defineStore({
                             npl: 0,
                         }
                     },
-                    chart: Chart2
                 },
                 {
                     liga: {
@@ -142,53 +167,22 @@ export const useMainStore = defineStore({
                     teams: [
                         {
                             name: 'Roma FC',
-                            icon: icon('t-shirt-green'),
+                            iconColor: '#450a0a',
                             score: 0
                         },
                         {
                             name: 'FC Napoli',
-                            icon: icon('t-shirt-blue'),
+                            iconColor: '#48717e',
                             score: 0
                         },
                     ],
                     prediction: {
                         insights: {
-                            atm: 62,
-                            draw: 62,
-                            npl: 62,
+                            atm: generateRandomNumber(),
+                            draw: generateRandomNumber(),
+                            npl: generateRandomNumber(),
                         }
                     },
-                    chart: Chart
-                },
-                {
-                    liga: {
-                        name: 'La Liga Santander',
-                        icon: icon('ball')
-                    },
-                    date: {
-                        value: 'Sat 6 May, 17:00',
-                        icon: icon('clock')
-                    },
-                    teams: [
-                        {
-                            name: 'Roma FC',
-                            icon: icon('t-shirt-green'),
-                            score: 0
-                        },
-                        {
-                            name: 'FC Napoli',
-                            icon: icon('t-shirt-blue'),
-                            score: 0
-                        },
-                    ],
-                    prediction: {
-                        insights: {
-                            atm: 62,
-                            draw: 62,
-                            npl: 62,
-                        }
-                    },
-                    chart: Chart1
                 },
             ]
         }

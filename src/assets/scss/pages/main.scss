@@ -170,6 +170,14 @@
       .tab-content {
         padding-bottom: 15px;
 
+        .insights {
+          @include mixins.mobile-view() {
+            .relative {
+
+            }
+          }
+        }
+
         ul {
           li {
             width: 256px;

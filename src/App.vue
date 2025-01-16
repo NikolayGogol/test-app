@@ -5,6 +5,7 @@ import {useMainStore} from "./store/index.js";
 import {storeToRefs} from "pinia";
 import {icon} from "./helpers/icon.js";
 import Chart from "./components/Chart.vue";
+import {onMounted, ref} from "vue";
 //
 const store = useMainStore()
 const {CARD_LIST} = storeToRefs(store)
@@ -22,8 +23,12 @@ const tabsList = [
     label: 'Last 5 Games'
   },
 ]
+const size = ref({w: 170})
 
 //
+onMounted(() => {
+  if (window.innerWidth < 768) size.value.w = 150
+})
 
 function prepareSeries(data) {
   const arr = []
@@ -234,7 +239,7 @@ function prepareSeries(data) {
             <div class="insights mt-[24px]">
               <div class="grid grid-cols-5 gap-[20px] sm:gap-[10px] items-center">
                 <div class="col-span-2">
-                  <Chart :size="{w: 170}"
+                  <Chart :size="size"
                          :percents="prepareSeries(card.prediction)"></Chart>
                 </div>
                 <ul class="col-span-3 w-full">

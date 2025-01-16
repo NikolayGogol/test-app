@@ -2,9 +2,6 @@
 const colors = ['#76E664', '#FFBD14', '#FF5A00']
 const maxDashOffset = 496.12;
 const strokeW = 13;
-const size = {
-  w: 160,
-}
 
 const props = defineProps({
   percents: {
@@ -29,6 +26,8 @@ const props = defineProps({
 function circleDashOffset(percent) {
   return maxDashOffset - (percent / 100) * maxDashOffset;
 }
+
+console.log(prepareSize(0));
 
 function prepareSize(index) {
   if (!index) {

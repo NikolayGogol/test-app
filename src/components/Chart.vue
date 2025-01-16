@@ -27,8 +27,6 @@ function circleDashOffset(percent) {
   return maxDashOffset - (percent / 100) * maxDashOffset;
 }
 
-console.log(prepareSize(0));
-
 function prepareSize(index) {
   if (!index) {
     return {
